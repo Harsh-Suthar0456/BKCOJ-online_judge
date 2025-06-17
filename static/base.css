@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em 0;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background: #007acc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .brand {
+    color: #fff;
+    font-size: 1.8em;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em;
+    transition: background 0.3s;
+  }
+  
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+  }
+  
+  /* Headings */
+  .page-heading {
+    text-align: center;
+    color: #007acc;
+    margin: 1.5em 0;
+    font-size: 1.6em;
+    border-bottom: 2px solid #007acc;
+    display: inline-block;
+    padding-bottom: 0.3em;
+  }
+  
+  /* Problem List */
+  .problem-list {
+    list-style: none;
+    display: block;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1em;
+    margin-bottom: 2em;
+  }
+  
+  .problem-list li {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+    padding: 1em;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .problem-list li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .problem-link {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .problem-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Submissions Table */
+  .table-responsive {
+    overflow-x: auto;
+    margin-bottom: 2em;
+  }
+  
+  .status-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .status-table th,
+  .status-table td {
+    padding: 0.75em 1em;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .status-table th {
+    background: #007acc;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .status-table tr:hover {
+    background: #f9f9f9;
+  }
+  
+  .view-link {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .view-link:hover {
+    text-decoration: underline;
+  }
+  
+  .no-submissions {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin: 2em 0;
+  }
+  
+  /* Status Badges */
+  .status-ok {
+    color: #28a745;
+    font-weight: bold;
+  }
+  .status-wrong {
+    color: #dc3545;
+    font-weight: bold;
+  }
+  .status-timeout {
+    color: #ffc107;
+    font-weight: bold;
+  }
+  .status-rte {
+    color: #17a2b8;
+    font-weight: bold;
+  }

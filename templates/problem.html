@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Problem {{ pid }} - BKCOJ{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='problem.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="container problem-page">
+    <h2 class="page-heading">Problem: {{ pid }}</h2>
+    <div class="description-block">
+      <pre>{{ description }}</pre>
+    </div>
+
+    <div class="submit-block">
+      <form method="post">
+        <h3>Submit Your C++ Code</h3>
+        <textarea name="code" class="code-input" placeholder="Paste your C++ code here..."></textarea>
+        <button type="submit" class="btn btn-submit">Submit Solution</button>
+      </form>
+
+      {% if message %}
+        <div class="message-block">
+          <p>{{ message }}</p>
+          <p>Check status at: <a href="{{ url_for('status', sub_id=message.split()[-1].strip('.')) }}">Status Page</a></p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

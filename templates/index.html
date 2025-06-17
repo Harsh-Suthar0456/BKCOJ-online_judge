@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Problems & Submissions - BKCOJ{% endblock %}
+
+{% block content %}
+  <div class="container problems-page">
+    <h2 class="page-heading">Problems</h2>
+    <ul class="problem-list">
+      {% for pid in problems %}
+        <li><a class="problem-link" href="{{ url_for('problem', pid=pid) }}">Problem {{ pid }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="page-heading">Recent Submissions</h2>
+    {% if submissions %}
+      <div class="table-responsive">
+        <table class="status-table">
+          <thead>
+            <tr>
+              <th>Submission ID</th>
+              <th>Time</th>
+              <th>Problem</th>
+              <th>Status</th>
+              <th>View</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for sub in submissions %}
+              <tr>
+                <td>{{ sub.id }}</td>
+                <td>{{ sub.timestamp }}</td>
+                <td>{{ sub.problem }}</td>
+                <td><span class="status-{{ sub.status|lower }}">{{ sub.status }}</span></td>
+                <td><a class="view-link" href="{{ url_for('status', sub_id=sub.id) }}">Details</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="no-submissions">No submissions yet.</p>
+    {% endif %}
+  </div>
+{% endblock %}

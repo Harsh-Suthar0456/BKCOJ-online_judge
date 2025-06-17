@@ -1,0 +1,4 @@
+Running tests for problem2:
+Test 1 passed.
+Test 2 passed.
+Passed 2/2 tests.

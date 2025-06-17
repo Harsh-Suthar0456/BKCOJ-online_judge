@@ -1,0 +1,62 @@
+/* static/css/status.css */
+
+/* Status Page Specific Styles */
+.status-page {
+    margin: 2em auto;
+    max-width: 800px;
+    background: #fff;
+    padding: 2em;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .status-page h2 {
+    text-align: center;
+    color: #007acc;
+    margin-bottom: 1em;
+  }
+  
+  .code-block {
+    background: #f5f5f5;
+    border-left: 4px solid #28a745;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  
+  .status-info {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+  }
+  
+  .status-info strong {
+    color: #007acc;
+  }
+  
+  .result-block {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 1em;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    margin-bottom: 1.5em;
+  }
+  
+  .result-block h3 {
+    margin-top: 0;
+    color: #007acc;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 1em;
+    color: #007acc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .back-link:hover {
+    color: #005fa3;
+  }

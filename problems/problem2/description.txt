@@ -1,0 +1,1 @@
+input- 2 numbers, n and m, print the sum of the 2 numbers

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}<center>Home - BKCOJ{% endblock %}</center></title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <nav class="navbar">
+    <center>
+    <div class="container">
+      <a href="{{ url_for('index') }}" class="brand"><center>BKCOJ</center></a>
+        <ul class="nav-links">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('index') }}">Problems</a></li>
+          <li><a href="{{ url_for('index') }}">Submissions</a></li>
+        </ul>
+      </center>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; {{ current_year }} BKCOJ. All rights unreserved.
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

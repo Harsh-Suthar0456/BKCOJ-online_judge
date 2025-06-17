@@ -1,0 +1,4 @@
+Running tests for problem1:
+Test 1 exceeded memory limit of 256MB.
+Test 2 exceeded memory limit of 256MB.
+Passed 0/2 tests.
