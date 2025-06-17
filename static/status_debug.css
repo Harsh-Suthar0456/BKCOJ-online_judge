@@ -1,0 +1,58 @@
+/* static/css/debug_status.css */
+
+/* Debug Download Section - Themed to match the main site */
+.download-block {
+    background: #fff;
+    border-left: 4px solid #007acc;
+    padding: 1.5em;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 2em;
+  }
+  
+  .download-block h3 {
+    color: #007acc;
+    font-size: 1.4em;
+    margin: 0 0 0.75em;
+  }
+  
+  .download-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.75em;
+  }
+  
+  .download-table th,
+  .download-table td {
+    border: 1px solid #ddd;
+    padding: 0.75em 1em;
+    text-align: left;
+  }
+  
+  .download-table th {
+    background: #007acc;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
+  
+  .download-table a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .download-table a:hover {
+    color: #005fa3;
+    text-decoration: underline;
+  }
+  
+  /* Timestamp styling carried over */
+  .status-info .timestamp {
+    display: block;
+    margin-top: 0.75em;
+    color: #555;
+    font-size: 0.9em;
+  }
+  

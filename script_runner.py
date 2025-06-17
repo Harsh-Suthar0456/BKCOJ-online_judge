@@ -55,6 +55,9 @@ while True:
             total = 0
         else:
             total = len([f for f in os.listdir(tests_dir) if f.startswith('input') and f.endswith('.txt')])
+        
+
+        passed = 0
 
         # compile
         comp = subprocess.run([
@@ -67,7 +70,7 @@ while True:
             result = f"Compile Error:{comp.stderr or comp.stdout}"
         else:
             # execute each test with {TIME_LIMIT}s timeout and {MEMORY_LIMIT}MB memory limit
-            passed = 0
+            # passed = 0
             result = f"Running tests for {pid}:\n"
 
             for fn in sorted(os.listdir(tests_dir)):

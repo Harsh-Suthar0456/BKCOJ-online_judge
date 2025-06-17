@@ -2,7 +2,8 @@ import os
 import uuid
 import csv
 from datetime import datetime
-from flask import Flask, render_template, request, url_for
+import json
+from flask import Flask, render_template, request, url_for, send_from_directory
 
 app =Flask(__name__)
 BASE_DIR =os.path.abspath(os.path.dirname(__file__))
@@ -108,15 +109,52 @@ def status(sub_id):
         with open(submitted_code) as f:
             submitted_code = f.read()
 
+    # see if debug status is set to true for this problem
+    pid = entry['problem']
+    prob_dir = os.path.join(PROB_DIR, pid)
+    config_path = os.path.join(prob_dir, 'config.json')
+    if os.path.exists(config_path):
+        with open(config_path) as f:
+            config = json.load(f)
+        debug_mode = config.get('DEBUG', False)
+    else:
+        debug_mode = False
+    
+    if debug_mode:
+        downloads = []
+        testcases_path = os.path.join(prob_dir, 'tests')
+        if os.path.exists(testcases_path):
+            for fname in os.listdir(testcases_path):
+                if fname.startswith('input') and fname.endswith('.txt'):
+                    downloads.append({
+                        'input': fname,
+                        'output': fname.replace('input', 'output')
+                    })
+    if debug_mode:
+        return render_template('status_debug.html', sub_id=sub_id,
+                            pid=pid,
+                            status=entry['status'],
+                            time=entry['timestamp'],
+                            result=result,
+                            submitted_code=submitted_code,
+                            downloads=downloads,
+                            debug_mode=debug_mode)
+    else:
+        return render_template('status.html', sub_id=sub_id,
+                            pid=pid,
+                            status=entry['status'],
+                            time=entry['timestamp'],
+                            result=result,
+                            submitted_code=submitted_code,
+                            debug_mode=debug_mode)
 
-    return render_template('status.html', sub_id=sub_id,
-                           pid=entry['problem'],
-                           status=entry['status'],
-                           time=entry['timestamp'],
-                           result=result,
-                           submitted_code=submitted_code)
-
-
+@app.route('/problems/<pid>/tests/<path:filename>')
+def serve_testfile(pid, filename):
+    # check if file exists
+    tests_dir = os.path.join(PROB_DIR, pid, 'tests')
+    if not os.path.exists(tests_dir) or not os.path.isdir(tests_dir):
+        return "Tests directory not found", 404
+    return send_from_directory(os.path.join(PROB_DIR, pid, 'tests'), filename)
 
 
 if __name__ == '__main__':
