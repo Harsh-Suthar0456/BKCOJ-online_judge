@@ -1,2 +1,0 @@
-Running tests for problem2:
-Passed 0/2 tests.

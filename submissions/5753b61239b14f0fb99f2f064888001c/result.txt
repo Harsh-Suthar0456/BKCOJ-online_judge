@@ -1,3 +1,0 @@
-Compile Error:/usr/src/main.cpp:1:1: error: 'nknk' does not name a type
-    1 | nknk
-      | ^~~~

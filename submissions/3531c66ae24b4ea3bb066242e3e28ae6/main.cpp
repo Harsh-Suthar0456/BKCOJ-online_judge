@@ -4,6 +4,9 @@ using namespace std;
 int main(){
     int n;
     cin >>n;
+    for(int i = 1;i<1000000000000ll;i++){
+        i++;
+    }
     cout << "hello"<<endl;
     return 0;
 }
