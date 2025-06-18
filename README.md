@@ -77,7 +77,7 @@ problems/
         │   ├── input1.txt
         │   ├── input2.txt
         │   ├── output1.txt
-        │   └── output2.txt
+        └── └── output2.txt
 ```
 - Supports any number of test cases, just make sure to have the input and output files named correctly (e.g., `input1.txt`, `output1.txt`, etc.). Currently supports only token matching based test cases, would later extend it to support more complex test cases.
 - The `description.txt` file should contain the problem statement. Would later change it to rather support a markdown file.
